@@ -8,8 +8,24 @@ const donate = [
     },
   },
   {
+    title: 'A Different Climate Issue',
+    description: 'We are fighting to prevent global catastrophe.',
+    link: {
+      to: '#',
+      label: 'Donate Now',
+    },
+  },
+  {
     title: 'Feeding NJ',
     description: 'Help feed people in our own backyards',
+    link: {
+      to: '#',
+      label: 'Donate Now',
+    },
+  },
+  {
+    title: 'Books and Such',
+    description: 'Help libraries survive, or improve U.S. education',
     link: {
       to: '#',
       label: 'Donate Now',
