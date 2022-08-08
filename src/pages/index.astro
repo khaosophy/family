@@ -1,0 +1,34 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import Donate from '../components/Donate.astro';
+import donate from '../content/donate';
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		<h1>Make the World a Better Place</h1>
+		<p>Thank you for expressing the desire to buy the baby something to make his or her first few years better, but please consider thinking long term and make a donation to help make a difference in the world.</p>
+		<ul>
+			{donate.map(item => (
+				<Donate
+					title={item.title}
+					description={item.description}
+					link={item.link}
+				/>
+			))}
+		</ul>
+	</main>
+</Layout>
+
+<style>
+	h1 {
+		margin: 2rem 0;
+	}
+
+	main {
+		margin: auto;
+		padding: 1em;
+		max-width: 60ch;
+	}
+</style>

@@ -1,0 +1,18 @@
+---
+export interface Props {
+	title: string;
+	description: string;
+	link: {
+    to: string,
+    label: string,
+  };
+}
+
+const { title, description, link } = Astro.props as Props;
+---
+
+<li class="donation">
+  <h3 class="donation__title">{title}</h3>
+  <p class="donation__description">{description}</p>
+  <a href={link.to} class="btn btn-primary">{link.label}</a>
+</li>
