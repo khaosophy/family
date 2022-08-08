@@ -24,10 +24,10 @@ const donate = [
     },
   },
   {
-    title: 'Books and Such',
-    description: 'Help libraries survive, or improve U.S. education',
+    title: 'Ferst Readers',
+    description: 'A child\'s path to a brighter future is paved with books.',
     link: {
-      to: '#',
+      to: 'https://ferst-readers-inc.networkforgood.com/projects/149522-donate-now',
       label: 'Donate Now',
     },
   },
