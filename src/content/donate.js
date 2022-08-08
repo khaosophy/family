@@ -16,10 +16,10 @@ const donate = [
     },
   },
   {
-    title: 'Feeding NJ',
-    description: 'Help feed people in our own backyards',
+    title: 'NJ Community Food Bank',
+    description: 'Connecting people with food and ending hunger in our own backyard.',
     link: {
-      to: '#',
+      to: 'https://cfbnj.org/?form=donate',
       label: 'Donate Now',
     },
   },
