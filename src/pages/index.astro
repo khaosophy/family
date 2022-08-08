@@ -5,10 +5,10 @@ import donate from '../content/donate';
 ---
 
 <Layout title="Donations for Little Bird">
-	<main>
+	<main class="text-center">
 		<h1>Make the World a Better Place</h1>
 		<p>Thank you for expressing the desire to buy the baby something to make his or her first few years better, but please consider thinking long term and make a donation to help make a difference in the world.</p>
-		<ul>
+		<ul class="list-unstyled">
 			{donate.map(item => (
 				<Donate
 					title={item.title}
@@ -29,5 +29,15 @@ import donate from '../content/donate';
 		margin: auto;
 		padding: 1em;
 		max-width: 60ch;
+	}
+	.list-unstyled {
+		padding-left: 0;
+    list-style: none;
+	}
+	.text-center {
+		text-align: center;
+	}
+	p {
+		margin-bottom: 3rem;
 	}
 </style>

@@ -11,8 +11,34 @@ export interface Props {
 const { title, description, link } = Astro.props as Props;
 ---
 
-<li class="donation">
-  <h3 class="donation__title">{title}</h3>
-  <p class="donation__description">{description}</p>
-  <a href={link.to} class="btn btn-primary">{link.label}</a>
+<li>
+  <h3>{title}</h3>
+  <p>{description}</p>
+  <a href={link.to}>{link.label}</a>
 </li>
+<style>
+  li {
+    margin-bottom: 3rem;
+  }
+  h3 {
+    margin-bottom: 0.5rem;
+  }
+  p {
+    margin-top: 0;
+  }
+  a {
+    text-decoration: none;
+    font-style: italic;
+    border: 1px solid #006bb3;
+    color: #006bb3;
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+    display: inline-block;
+    transition: all 300ms;
+  }
+  a:hover,
+  a:focus {
+    background: #006bb3;
+    color: white;
+  }
+</style>
