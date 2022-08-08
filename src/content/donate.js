@@ -1,17 +1,17 @@
 const donate = [
   {
-    title: 'Climate Change Issue',
-    description: 'We are fighting for a better world for all children',
+    title: 'Ocean Conservancy',
+    description: 'Our ocean unifies our world like nothing else. And saving it from ongoing threats is a cause that affects us all.',
     link: {
-      to: '#',
+      to: 'https://donate.oceanconservancy.org/page/92465/donate/1',
       label: 'Donate Now',
     },
   },
   {
-    title: 'A Different Climate Issue',
-    description: 'We are fighting to prevent global catastrophe.',
+    title: 'Sierra Club Foundation',
+    description: 'The Sierra Club Foundation promotes climate solutions, conservation, and grassroots advocacy.',
     link: {
-      to: '#',
+      to: 'https://act.sierraclub.org/donate/rc_connect__campaign_designform?id=70131000001hPsPAAU&formcampaignid=701310000008koOAAQ',
       label: 'Donate Now',
     },
   },
