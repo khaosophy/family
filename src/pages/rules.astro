@@ -1,0 +1,36 @@
+---
+import Layout from '../layouts/Layout.astro';
+import rules from '../content/rules';
+---
+<Layout title='Agreed Upon Rules for the Perno Family'>
+  <main>
+    <h1>Rules for the Little Ones</h1>
+    <ol>
+      {rules.map((rule) => (
+        <li>{rule.title}</li>
+      ))}
+    </ol>
+  </main>
+</Layout>
+
+<style>
+	h1 {
+		margin: 2rem 0;
+	}
+
+	main {
+		margin: auto;
+		padding: 1em;
+		max-width: 80ch;
+	}
+	.list-unstyled {
+		padding-left: 0;
+    list-style: none;
+	}
+	.text-center {
+		text-align: center;
+	}
+	p {
+		margin-bottom: 3rem;
+	}
+</style>
