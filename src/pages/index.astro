@@ -1,22 +1,21 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Donate from '../components/Donate.astro';
-import donate from '../content/donate';
 ---
 
-<Layout title="Recommended Donations for the Perno Family">
-	<main class="text-center">
-		<h1>Make the World a Better Place</h1>
-		<p>We treasure the excitement around the upcoming little one, but we ask that the celebration <em>not</em> include purchasing new things. If you have the money to spend, we ask that you donate it in the baby's honor instead. We have provided a vetted list of worthwhile charities.</p>
-		<ul class="list-unstyled">
-			{donate.map(item => (
-				<Donate
-					title={item.title}
-					description={item.description}
-					link={item.link}
-				/>
-			))}
-		</ul>
+<Layout title="The Perno Family">
+	<main>
+		<h1>Eliza's First Birthday</h1>
+		<h2>October 7th, 2023</h2>
+		<p>They grow up so fast! It seems like just last week that Eliza was born. Now she's turning one! We're so excited to celebrate with you. Please join us for a fun-filled day of food, games, friends, and family.</p>
+		<p>
+			<strong>Location: </strong>
+			<a href="https://www.alstedefarms.com/">Alsted Farm</a> <br/>
+			<strong>Time: </strong>
+			1:00pm - 4:00pm
+		</p>
+		<p>
+			Please refrain from buying or giving presents. If the spirit moves you, please contribute to Eliza's college fund (link coming soon), or consider donating to <a href="/donate">one of these charities</a>.
+		</p>
 	</main>
 </Layout>
 
@@ -28,7 +27,7 @@ import donate from '../content/donate';
 	main {
 		margin: auto;
 		padding: 1em;
-		max-width: 60ch;
+		max-width: 80ch;
 	}
 	.list-unstyled {
 		padding-left: 0;
