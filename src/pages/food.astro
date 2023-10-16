@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+import food from '../data/food';
+/**
+ * TODO: UI for hasTried (checkbox?)
+ * TODO: UI for rating (stars)
+ * TODO: seperate by food type
+ */
+---
+<Layout title='Food for the Little One'>
+  <main>
+    <h1>Food for the Little One</h1>
+    <ol>
+      {food.map((food) => (
+        <li>{food.name}</li>
+      ))}
+    </ol>
+  </main>
+</Layout>
+
+<style>
+	h1 {
+		margin: 2rem 0;
+	}
+
+	main {
+		margin: auto;
+		padding: 1em;
+		max-width: 80ch;
+	}
+	.list-unstyled {
+		padding-left: 0;
+    list-style: none;
+	}
+	.text-center {
+		text-align: center;
+	}
+	p {
+		margin-bottom: 3rem;
+	}
+</style>
