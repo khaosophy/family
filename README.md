@@ -1,44 +1,26 @@
-# Welcome to [Astro](https://astro.build)
+# Welcome to The Perno Family Website
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
+This website is meant to be a repository of all things Perno family: photos, events, updates, etc. Today, the site serves mostly two functions: 
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+1. Posting a daily routine for babysitters to follow when watching the young ones
+2. Posting event information for major events like birthday parties
 
-## 🚀 Project Structure
+## Future Features
 
-Inside of your Astro project, you'll see the following folders and files:
+I want to extend the existing functionality further. Some ideas worth exploring follow.
 
-```
-/
-├── public/
-│   └── favicon.ico
-├── src/
-│   ├── components/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+### Photo Gallery
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Today I am using Google Photos for all of my photo storing needs, but there are some limitations. For one, how do I get access to other peoples photos? They have to share them with me some way, and then I have to make sure they get up into Google Photos. This can be cumbersome by itself, but add in the fact that meta data like the date doesn't always carry over, and that sharing the photo sometimes degrades it (various tools will compress it). Being able to have a central photo gallery that anyone with permission can view and *upload* to would alleviate these stresses. We can also add the ability, in the future, to caption and leave comments. These photos can be categorized by year/date, events, or person.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components or layouts.
+### Events / Calendar
 
-Any static assets, like images, can be placed in the `public/` directory.
+This would focus on upcoming events, like graduations, birthday parties, etc. Possibly include the ability to RSVP for events. Possibly include the ability to get notifications whenever a new event is posted. However, it could also be a good way to look up past events, and allow users to upload their own photos linked to that event.
 
-## 🧞 Commands
+### Family Tree
 
-All commands are run from the root of the project, from a terminal:
+This section can be an interactive family tree that users can scroll through and get more information on family members and relations.
 
-| Command                | Action                                             |
-| :--------------------- | :------------------------------------------------- |
-| `npm install`          | Installs dependencies                              |
-| `npm run dev`          | Starts local dev server at `localhost:3000`        |
-| `npm run build`        | Build your production site to `./dist/`            |
-| `npm run preview`      | Preview your build locally, before deploying       |
-| `npm run astro ...`    | Run CLI commands like `astro add`, `astro preview` |
-| `npm run astro --help` | Get help using the Astro CLI                       |
+### Contact Directory
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Updated contact information for all family members and, possibly, their emergency contacts. Include addresses for holiday cards and/or invites.
