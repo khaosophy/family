@@ -6,79 +6,111 @@ import "bootstrap/dist/css/bootstrap.min.css";
   <main>
     <h1>Schedule</h1>
     <p>The following schedule is an approximation. Always follow the kid's signs first and foremost, but this can be a helpful guide.</p>
-		<table class="table">
-			<tbody>
-				<tr>
-					<th>~7:00am</th>
-					<td>Wake up</td>
-					<td>Diaper change and potty time too</td>
-				</tr>
-				<tr>
-					<th>7:30-9:30am</th>
-					<td>Breakfast</td>
-					<td></td>
-				</tr>
-				<tr>
-					<th>9:30am</th>
-					<td>Potty Time & Handwashing</td>
-					<td></td>
-				</tr>
-				<tr>
-					<th>11:00am</th>
-					<td>Lunch</td>
-					<td></td>
-				</tr>
-				<tr>
-					<th>11:30am</th>
-					<td>Potty Time</td>
-					<td>
-				</tr>
-				<tr>
-					<th>12:00-2:00pm</th>
-					<td>Nap / Quiet Time</td>
-					<td></td>
-				</tr>
-				<tr>
-					<th>2:00pm</th>
-					<td>Potty Time</td>
-					<td></td>
-				<tr>
-					<th>2:30pm</th>
-					<td>Afternoon Snack</td>
-					<td></td>
-				</tr>
-				<tr>
-					<th>~4:30pm</th>
-					<td>Potty Time</td>
-					<td></td>
-				</tr>
-				<tr>
-					<th>6:00pm</th>
-					<td>Dinner</td>
-					<td></td>
-				</tr>
-				<tr>
-					<th>6:30pm</th>
-					<td>Bath & Potty Time</td>
-					<td>Baths are not required daily</td>
-				<tr>
-					<th>7:30pm</th>
-					<td>Story Time</td>
-					<td></td>
-				</tr>
-				<tr>
-					<th>8pm</th>
-					<td>Bedtime</td>
-					<td></td>
-			</tbody>
-		</table>
 		
-		<!-- <h3 class="h5 mt-5">Notes</h3>
-		<ul>
-			<li>We are trying out a 7pm bedtime (instead of 6:30).</li>
-			<li>She has been sleeping pretty much throughout the night at home. If she does wake up, see if she will self-soothe (5-10 minutes). IF not, then you can help comfort her.</li>
-		</ul> -->
+		<!-- Bootstrap Tabs -->
+		<ul class="nav nav-tabs" id="scheduleTab" role="tablist">
+			<li class="nav-item" role="presentation">
+				<button class="nav-link" id="eliza-tab" data-bs-toggle="tab" data-bs-target="#eliza" type="button" role="tab" aria-controls="eliza" aria-selected="false">Eliza</button>
+			</li>
+			<li class="nav-item" role="presentation">
+				<button class="nav-link active" id="daniel-tab" data-bs-toggle="tab" data-bs-target="#daniel" type="button" role="tab" aria-controls="daniel" aria-selected="true">Daniel</button>
+			</li>
+		</ul>
+		
+		<div class="tab-content" id="scheduleTabContent">
+			<div class="tab-pane fade" id="eliza" role="tabpanel" aria-labelledby="eliza-tab">
+				<table class="table">
+					<tbody>
+						<tr>
+							<th>~7:00am</th>
+							<td>Wake up</td>
+							<td></td>
+						</tr>
+						<tr>
+							<th>7:30-9:30am</th>
+							<td>Breakfast</td>
+							<td></td>
+						</tr>
+						<tr>
+							<th>11:00am</th>
+							<td>Lunch</td>
+							<td></td>
+						</tr>
+						<tr>
+							<th>12:00-2:00pm</th>
+							<td>Nap / Quiet Time</td>
+							<td></td>
+						</tr>
+						<tr>
+							<th>2:30pm</th>
+							<td>Snack</td>
+							<td></td>
+						</tr>
+						<tr>
+							<th>6:00pm</th>
+							<td>Dinner</td>
+							<td></td>
+						</tr>
+						<tr>
+							<th>7:00pm</th>
+							<td>Story Time</td>
+							<td></td>
+						</tr>
+						<tr>
+							<th>8:00pm</th>
+							<td>Bedtime</td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			
+			<div class="tab-pane fade show active" id="daniel" role="tabpanel" aria-labelledby="daniel-tab">
+				<table class="table">
+					<tbody>
+						<tr>
+							<th>~7:00am</th>
+							<td>Wake&nbsp;up</td>
+							<td></td>
+						</tr>
+						<tr>
+							<th>8:00am-9:00am</th>
+							<td>Feed</td>
+							<td>8 oz. bottle</td>
+						</tr>
+						<tr>
+							<th>10:00am-1:00pm</th>
+							<td>Nap</td>
+							<td>can go down anytime between 10:00am and 11:00am, and will sleep for about 2 hours</td>
+						</tr>
+						<tr>
+							<th>1:00pm</th>
+							<td>Feed</td>
+							<td>8 oz. bottle</td>
+						</tr>
+						<tr>
+							<th>4:00pm</th>
+							<td>Feed</td>
+							<td>8 oz. bottle</td>
+						</tr>
+						<tr>
+							<th>6:00pm</th>
+							<td>Feed</td>
+							<td>8 oz. bottle</td>
+						</tr>
+						<tr>
+							<th>6:30pm</th>
+							<td>Bed</td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
   </main>
+  
+  <!-- Bootstrap JS for tab functionality -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </Layout>
 
 <style>
@@ -99,6 +131,16 @@ import "bootstrap/dist/css/bootstrap.min.css";
 		padding-left: 0;
     list-style: none;
 	}
+	
+	/* Tab styling */
+	.tab-content {
+		margin-top: 1rem;
+	}
+	
+	.nav-tabs .nav-link.active {
+		font-weight: 600;
+	}
+
 	.text-center {
 		text-align: center;
 	}
