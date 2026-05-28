@@ -56,6 +56,19 @@ import Layout from '../../../layouts/Layout.astro';
 			<p class="rsvp-note">Note: if you did not RSVP, your name may not be on the guest list and you could be asked to pay the general admission fee.</p>
 		</div>
 
+		<div class="card map-card">
+			<h2><span class="icon">🗺️</span> Map</h2>
+			<p>Directions to our private gazebo are marked below — between Bear Country and the carousel.</p>
+			<div class="map-container">
+				<img src="/turtleback-map-directions.png" alt="Turtle Back Zoo map" class="zoo-map" />
+				<!-- <div class="map-marker" style="left: 19.5%; top: 38%;">
+					<div class="marker-pulse"></div>
+					<div class="marker-dot"></div>
+					<span class="marker-label">We're here!</span>
+				</div> -->
+			</div>
+		</div>
+
 		<div class="card">
 			<h2><span class="icon">📋</span> Agenda</h2>
 			<ul class="agenda">
@@ -395,6 +408,22 @@ import Layout from '../../../layouts/Layout.astro';
 	.cal-menu a:hover {
 		background: #f0faf4;
 		color: var(--green-mid) !important;
+	}
+
+	/* ── Map ── */
+	.map-card p {
+		margin-bottom: 0.75rem;
+	}
+
+	.map-container {
+		position: relative;
+		border-radius: 0.5rem;
+		overflow: hidden;
+	}
+
+	.zoo-map {
+		width: 100%;
+		display: block;
 	}
 
 	/* ── Footer animals ── */
