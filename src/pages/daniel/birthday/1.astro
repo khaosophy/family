@@ -519,7 +519,7 @@ import Layout from '../../../layouts/Layout.astro';
 <script>
 	document.querySelectorAll('.cal-dropdown').forEach(dropdown => {
 		const btn = dropdown.querySelector('.cal-btn');
-		btn.addEventListener('click', e => {
+		btn?.addEventListener('click', e => {
 			e.stopPropagation();
 			dropdown.classList.toggle('open');
 		});
