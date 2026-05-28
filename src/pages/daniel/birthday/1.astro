@@ -50,9 +50,10 @@ import Layout from '../../../layouts/Layout.astro';
 			<h2><span class="icon">🚗</span> Arrival & Check-in</h2>
 			<ul>
 				<li><strong>Parking is free.</strong> Once you arrive, you will be directed to one of the free parking areas.</li>
-				<li><strong>Check in at Window #2</strong> at the Main Entrance — that's where our guest list will be. Note: if you did not RSVP, you may not be on the list and could be asked to pay the general admission fee.</li>
-				<li><strong>Finding us:</strong> Once inside, make your way toward Bear Country. Our gazebo is located between Bear Country and the carousel.</li>
+				<li><strong>Check in at Window #2</strong> at the Main Entrance — that's where our guest list will be. Tell them you're here for Daniel's First Birthday.</li>
+				<li><strong>Finding us:</strong> Once inside, make your way toward Bear Country. Our private area is in the gazebo located between Bear Country and the carousel.</li>
 			</ul>
+			<p class="rsvp-note">Note: if you did not RSVP, your name may not be on the guest list and you could be asked to pay the general admission fee.</p>
 		</div>
 
 		<div class="card">
@@ -238,6 +239,14 @@ import Layout from '../../../layouts/Layout.astro';
 		position: absolute;
 		left: 0;
 		font-size: 0.9rem;
+	}
+
+	.rsvp-note {
+		font-size: 0.88rem;
+		color: var(--brown);
+		font-style: italic;
+		margin: 0.25rem 0 0.75rem;
+		padding-left: 1.6rem;
 	}
 
 	/* ── Agenda list ── */
