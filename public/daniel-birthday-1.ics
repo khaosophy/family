@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Family Website//Daniel's Birthday//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+DTSTART:20260530T143000Z
+DTEND:20260530T173000Z
+SUMMARY:Daniel's First Birthday
+LOCATION:Turtle Back Zoo\, 560 Northfield Ave\, West Orange\, NJ 07052
+DESCRIPTION:Join us to celebrate Daniel's first birthday at Turtle Back Zoo!
+END:VEVENT
+END:VCALENDAR

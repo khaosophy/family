@@ -22,8 +22,13 @@ import Layout from '../../../layouts/Layout.astro';
 					<strong>Date:</strong> Saturday, May 30, 2026<br/>
 					<strong>Time:</strong> 10:30am – 1:30pm
 				</p>
-				<div class="btn-row">
-					<a class="btn btn-outline" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Daniel%27s+First+Birthday&dates=20260530T143000Z%2F20260530T173000Z&location=Turtle+Back+Zoo%2C+560+Northfield+Ave%2C+West+Orange%2C+NJ+07052&details=Join+us+to+celebrate+Daniel%27s+first+birthday+at+Turtle+Back+Zoo!" target="_blank">Add to Calendar</a>
+				<div class="cal-dropdown">
+					<button class="btn btn-outline cal-btn">Add to Calendar <span class="chevron">▾</span></button>
+					<ul class="cal-menu">
+						<li><a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Daniel%27s+First+Birthday&dates=20260530T143000Z%2F20260530T173000Z&location=Turtle+Back+Zoo%2C+560+Northfield+Ave%2C+West+Orange%2C+NJ+07052&details=Join+us+to+celebrate+Daniel%27s+first+birthday+at+Turtle+Back+Zoo!" target="_blank">Google Calendar</a></li>
+						<li><a href="https://outlook.live.com/calendar/0/action/compose?subject=Daniel%27s+First+Birthday&startdt=2026-05-30T14%3A30%3A00Z&enddt=2026-05-30T17%3A30%3A00Z&location=Turtle+Back+Zoo%2C+560+Northfield+Ave%2C+West+Orange%2C+NJ+07052&body=Join+us+to+celebrate+Daniel%27s+first+birthday+at+Turtle+Back+Zoo!" target="_blank">Outlook</a></li>
+						<li><a href="/daniel-birthday-1.ics" download>Apple / Other (.ics)</a></li>
+					</ul>
 				</div>
 			</div>
 
@@ -307,6 +312,74 @@ import Layout from '../../../layouts/Layout.astro';
 		color: var(--green-dark);
 	}
 
+	/* ── Calendar dropdown ── */
+	.cal-dropdown {
+		position: relative;
+		display: inline-block;
+		margin-top: 1rem;
+	}
+
+	.cal-btn {
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		gap: 0.4rem;
+	}
+
+	.chevron {
+		font-style: normal;
+		transition: transform 0.2s;
+		display: inline-block;
+	}
+
+	.cal-dropdown.open .chevron {
+		transform: rotate(180deg);
+	}
+
+	.cal-menu {
+		display: none;
+		position: absolute;
+		top: calc(100% + 0.4rem);
+		left: 0;
+		background: white;
+		border: 1.5px solid var(--card-border);
+		border-radius: 0.6rem;
+		padding: 0.35rem 0;
+		margin: 0;
+		list-style: none;
+		min-width: 100%;
+		box-shadow: 0 4px 16px rgba(45, 106, 79, 0.12);
+		z-index: 10;
+		white-space: nowrap;
+	}
+
+	.cal-dropdown.open .cal-menu {
+		display: block;
+	}
+
+	.card .cal-menu li {
+		padding-left: 0;
+	}
+
+	.cal-menu li::before {
+		display: none !important;
+	}
+
+	.cal-menu a {
+		display: block;
+		padding: 0.5rem 1rem;
+		font-family: 'Nunito', sans-serif;
+		font-size: 0.9rem;
+		font-weight: 600;
+		color: var(--text) !important;
+		text-decoration: none;
+	}
+
+	.cal-menu a:hover {
+		background: #f0faf4;
+		color: var(--green-mid) !important;
+	}
+
 	/* ── Footer animals ── */
 	.footer-animals {
 		text-align: center;
@@ -316,3 +389,14 @@ import Layout from '../../../layouts/Layout.astro';
 		opacity: 0.5;
 	}
 </style>
+
+<script>
+	document.querySelectorAll('.cal-dropdown').forEach(dropdown => {
+		const btn = dropdown.querySelector('.cal-btn');
+		btn.addEventListener('click', e => {
+			e.stopPropagation();
+			dropdown.classList.toggle('open');
+		});
+		document.addEventListener('click', () => dropdown.classList.remove('open'));
+	});
+</script>
