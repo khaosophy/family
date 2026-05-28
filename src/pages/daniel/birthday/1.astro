@@ -59,15 +59,22 @@ import Layout from '../../../layouts/Layout.astro';
 		<div class="card map-card">
 			<h2><span class="icon">🗺️</span> Map</h2>
 			<p>Directions to our private gazebo are marked below — between Bear Country and the carousel.</p>
-			<div class="map-container">
+			<div class="map-container" id="map-container">
 				<img src="/turtleback-map-directions.png" alt="Turtle Back Zoo map" class="zoo-map" />
-				<!-- <div class="map-marker" style="left: 19.5%; top: 38%;">
-					<div class="marker-pulse"></div>
-					<div class="marker-dot"></div>
-					<span class="marker-label">We're here!</span>
-				</div> -->
+				<button class="map-expand-btn" id="map-expand-btn" aria-label="View full size map">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+						<polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/>
+						<line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/>
+					</svg>
+					Expand
+				</button>
 			</div>
 		</div>
+
+		<dialog id="map-dialog" class="map-dialog">
+			<button class="dialog-close" id="dialog-close" aria-label="Close">✕</button>
+			<img src="/turtleback-map-directions.png" alt="Turtle Back Zoo map" />
+		</dialog>
 
 		<div class="card">
 			<h2><span class="icon">📋</span> Agenda</h2>
@@ -419,11 +426,84 @@ import Layout from '../../../layouts/Layout.astro';
 		position: relative;
 		border-radius: 0.5rem;
 		overflow: hidden;
+		cursor: zoom-in;
 	}
 
 	.zoo-map {
 		width: 100%;
 		display: block;
+	}
+
+	.map-expand-btn {
+		position: absolute;
+		bottom: 0.6rem;
+		right: 0.6rem;
+		display: flex;
+		align-items: center;
+		gap: 0.3rem;
+		padding: 0.3rem 0.65rem;
+		background: rgba(255,255,255,0.92);
+		color: var(--green-dark);
+		border: none;
+		border-radius: 2rem;
+		font-family: 'Nunito', sans-serif;
+		font-size: 0.78rem;
+		font-weight: 700;
+		cursor: pointer;
+		box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+		transition: background 0.15s;
+	}
+
+	.map-expand-btn:hover {
+		background: white;
+	}
+
+	/* ── Map dialog / lightbox ── */
+	.map-dialog {
+		border: none;
+		background: transparent;
+		padding: 0;
+		max-width: 95vw;
+		max-height: 95vh;
+		border-radius: 0.75rem;
+		overflow: hidden;
+		box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+	}
+
+	.map-dialog img {
+		display: block;
+		max-width: 95vw;
+		max-height: 90vh;
+		object-fit: contain;
+	}
+
+	.map-dialog::backdrop {
+		background: rgba(0,0,0,0.75);
+	}
+
+	.dialog-close {
+		position: absolute;
+		top: 0.6rem;
+		right: 0.6rem;
+		width: 2rem;
+		height: 2rem;
+		border-radius: 50%;
+		border: none;
+		background: rgba(255,255,255,0.92);
+		color: var(--green-dark);
+		font-size: 1rem;
+		font-weight: 700;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+		transition: background 0.15s;
+		z-index: 1;
+	}
+
+	.dialog-close:hover {
+		background: white;
 	}
 
 	/* ── Footer animals ── */
@@ -445,4 +525,13 @@ import Layout from '../../../layouts/Layout.astro';
 		});
 		document.addEventListener('click', () => dropdown.classList.remove('open'));
 	});
+
+	const dialog = document.getElementById('map-dialog') as HTMLDialogElement;
+	const openBtn = document.getElementById('map-expand-btn');
+	const mapContainer = document.getElementById('map-container');
+	const closeBtn = document.getElementById('dialog-close');
+
+	[openBtn, mapContainer].forEach(el => el?.addEventListener('click', () => dialog.showModal()));
+	closeBtn?.addEventListener('click', () => dialog.close());
+	dialog?.addEventListener('click', e => { if (e.target === dialog) dialog.close(); });
 </script>
