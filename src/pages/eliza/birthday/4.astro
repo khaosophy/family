@@ -15,6 +15,11 @@ import Layout from '../../../layouts/Layout.astro';
 	<main>
 		<p class="intro">Four years old already! It feels like just yesterday she was taking her first steps, and now she's dancing, telling stories, and keeping us all on our toes. Let's celebrate another year the way she loves best — outside, with crisp fall air, friends, and family.</p>
 
+		<div class="rsvp-banner">
+			<p>Please let us know if you can make it, and feel free to bring the whole family!</p>
+			<a class="btn btn-rsvp" href="https://evite.me/vG9CXs7ZGN" target="_blank" rel="noopener">RSVP on Evite</a>
+		</div>
+
 		<div class="card-grid">
 			<div class="card">
 				<h2><span class="icon">🗓️</span> When?</h2>
@@ -351,6 +356,48 @@ import Layout from '../../../layouts/Layout.astro';
 	.btn-outline:hover {
 		background: var(--rust-mid);
 		color: white;
+	}
+
+	/* ── RSVP ── */
+	.rsvp-banner {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 1.25rem;
+		text-align: left;
+		background: var(--gold);
+		color: var(--rust-dark);
+		border-radius: 1rem;
+		padding: 1.5rem 1.75rem;
+		margin-bottom: 1.25rem;
+		box-shadow: 0 2px 10px rgba(110, 42, 18, 0.2);
+	}
+
+	@media (min-width: 640px) {
+		.rsvp-banner {
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+		}
+	}
+
+	.rsvp-banner p {
+		margin: 0;
+		font-weight: 700;
+		font-size: 1.05rem;
+	}
+
+	.btn-rsvp {
+		background: var(--rust-mid);
+		color: white;
+		font-size: 1.05rem;
+		padding: 0.65rem 2rem;
+		flex-shrink: 0;
+	}
+
+	.btn-rsvp:hover {
+		filter: brightness(1.08);
+		transform: translateY(-1px);
 	}
 
 	/* ── Links ── */
